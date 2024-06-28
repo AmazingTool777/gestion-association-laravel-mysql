@@ -16,4 +16,8 @@ class DonationCallRequest extends Model
         "status",
         "approved_by",
     ];
+
+    protected $casts = [
+        "payload" => "array"
+    ];
 }
