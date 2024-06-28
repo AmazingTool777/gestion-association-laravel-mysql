@@ -17,3 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Draw.io diagrams backups
+*.drawio.bkp
+*.drawio.dtmp
