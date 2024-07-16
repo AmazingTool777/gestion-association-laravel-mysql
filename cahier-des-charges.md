@@ -160,10 +160,6 @@ Ce qui est déjà là
     -   Adresse
     -   CIN - délivré à
 
-#### Page d'ajout d'un administrateur
-
-Formulaire: - Nom et Prénom - Sexe - Pivilège (Admin ou Super Admin) - Email - Mot de passe - DDN - Adresse - CIN - délivré à - Actions: Créer
-
 ### Gestion des événements
 
 #### Page de liste d'événements
