@@ -1,0 +1,19 @@
+.login-form {
+    width: 100%;
+    max-width: 440px;
+    border: 6px double var(--bs-primary);
+    border-radius: 8px;
+    background-color: #fff;
+
+    &__logo {
+        width: 180px;
+    }
+}
+
+.page-bg {
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 35%);
+    width: 200vw;
+}

@@ -17,6 +17,7 @@ export default defineConfig({
                 "resources/css/fontawesome.css",
                 // SCSS
                 "resources/scss/bootstrap.scss",
+                "resources/scss/login.scss",
                 // Javascript
                 "resources/js/app.js",
             ],
