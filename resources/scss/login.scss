@@ -1,19 +1,9 @@
-.login-form {
-    width: 100%;
-    max-width: 440px;
-    border: 6px double var(--bs-primary);
-    border-radius: 8px;
-    background-color: #fff;
+.submit-btn {
+    background-color: #57b846;
+    color: #fff !important;
+    font-weight: 600;
 
-    &__logo {
-        width: 180px;
+    &:hover {
+        background-color: darken($color: #57b846, $amount: 4);
     }
-}
-
-.page-bg {
-    position: fixed;
-    bottom: 0;
-    right: 50%;
-    transform: translate(50%, 35%);
-    width: 200vw;
 }

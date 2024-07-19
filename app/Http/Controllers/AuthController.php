@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         if (!Auth::attempt($credentials)) {
             return back()->withErrors([
-                "credentials" => "L'adresse e-mail ou le mot de passe est invalide"
+                "credentials" => "Adresse e-mail ou mot de passe incorrect",
             ])->onlyInput("email", "password");
         }
 
@@ -34,5 +34,13 @@ class AuthController extends Controller
         } else {
             return redirect()->route('back-office.dashboard');
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return back();
     }
 }
