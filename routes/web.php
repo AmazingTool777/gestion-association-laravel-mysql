@@ -33,7 +33,7 @@ Route::get('/auth/login', [AuthController::class, "loginShow"])->name("login");
 Route::post('/auth/login', [AuthController::class, "login"])->name("login.submit");
 
 // Logout
-Route::get('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
+Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
 
 /* --------------------------------------------------------------------- */
 

@@ -1,3 +1,5 @@
+@props(['showNavbar' => true])
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +7,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/scss/bootstrap.scss', 'resources/css/tailwind.css'])
+    @vite(['resources/scss/lib/bootstrap.scss', 'resources/css/lib/fontawesome.css', 'resources/css/lib/tailwind.css', 'resources/scss/navbar.scss'])
     {{ $head }}
 </head>
 
 <body>
+    {{-- Navigation bar --}}
+    @if ($showNavbar)
+        <x-app-layout.navbar />
+    @endif
+
+    {{-- Modals --}}
+    @stack('modals')
+
     {{ $slot }}
+
+    {{-- JS scripts --}}
+    @stack('scripts')
 </body>
 
 </html>

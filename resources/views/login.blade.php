@@ -1,7 +1,7 @@
-<x-app-layout>
+<x-app-layout :show-navbar="false">
     <x-slot:head>
         <title>Connexion</title>
-        @vite(['resources/css/fontawesome.css', 'resources/scss/login.scss'])
+        @vite(['resources/css/lib/fontawesome.css', 'resources/scss/login.scss'])
     </x-slot>
 
     <div class="page-wrapper flex justify-center items-center min-h-screen px-8 py-10 relative z-10"

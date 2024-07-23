@@ -23,4 +23,13 @@ class Profile extends Model
     protected $casts = [
         'id_card' => 'array', // JSON field to array
     ];
+
+    /**
+     * ATTRIBUTE: Photo URL
+     */
+    public function getPhotoUrlAttribute()
+    {
+        if (!$this->photo) return null;
+        return "/storage/images/profiles/" . $this->photo;
+    }
 }
