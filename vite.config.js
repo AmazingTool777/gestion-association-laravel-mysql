@@ -13,13 +13,15 @@ export default defineConfig({
         laravel({
             input: [
                 // CSS
-                "resources/css/tailwind.css",
-                "resources/css/fontawesome.css",
+                "resources/css/lib/tailwind.css",
+                "resources/css/lib/fontawesome.css",
                 // SCSS
-                "resources/scss/bootstrap.scss",
+                "resources/scss/lib/bootstrap.scss",
                 "resources/scss/login.scss",
+                "resources/scss/navbar.scss",
                 // Javascript
                 "resources/js/app.js",
+                "resources/js/navbar.js",
             ],
             refresh: true,
         }),
