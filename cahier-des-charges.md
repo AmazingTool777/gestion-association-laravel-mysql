@@ -120,9 +120,13 @@ Ce qui est déjà là
 -   DDN
 -   Email
 -   Mot de passe
+-   Confirmation du mot de passe
 -   Adresse
 -   Code postal
+-   Numéro CIN
 -   CIN - Délivré le
+-   CIN - Délivré à
+-   Localité
 -   Profession
 -   Num telephone
 -   Accepter T&C

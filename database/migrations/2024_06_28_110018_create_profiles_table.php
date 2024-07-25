@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('birthday');
+            $table->enum('gender', ["M", "F"]);
             $table->string('photo')->nullable();
             $table->string('address');
+            $table->enum('origin', ["NATIONAL", "FOREIGN"])->default("NATIONAL");
+            $table->string('zip_code');
             $table->json('id_card');
             $table->string('profession');
             $table->string('phone');
