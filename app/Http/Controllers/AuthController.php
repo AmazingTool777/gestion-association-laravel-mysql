@@ -36,6 +36,11 @@ class AuthController extends Controller
         }
     }
 
+    public function signupShow()
+    {
+        return view("signup");
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();

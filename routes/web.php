@@ -32,6 +32,9 @@ Route::get('/auth/login', [AuthController::class, "loginShow"])->name("login");
 // Login process
 Route::post('/auth/login', [AuthController::class, "login"])->name("login.submit");
 
+// Signup page
+Route::get('/auth/signup', [AuthController::class, "signupShow"])->name("signup");
+
 // Logout
 Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
 
