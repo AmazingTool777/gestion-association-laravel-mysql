@@ -21,6 +21,7 @@ class Profile extends Model
         'id_card',
         'profession',
         'phone',
+        'user_id',
     ];
 
     protected $casts = [
