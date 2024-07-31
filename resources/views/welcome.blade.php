@@ -4,5 +4,5 @@
         @vite('resources/css/lib/fontawesome.css')
     </x-slot>
 
-    Home
+    Home 
 </x-app-layout>
