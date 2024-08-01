@@ -39,7 +39,7 @@ class AssociationEventController extends Controller
            }else{
             $result['photo']="/events_img/1636612872Fambolen-kazo faobe.jpg";
         }    
-        $result['posted_by']=1;
+        
         AssociationEvent::create($result);    
      return redirect()->route('events.index')->with('success','Evenement crée.');
     }
