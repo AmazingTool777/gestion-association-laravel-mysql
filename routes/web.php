@@ -43,8 +43,8 @@ Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.sub
 
 //evenements
 Route::resource('events', AssociationEventController::class);
-
 Route::post('/store_event',[AssociationEventController::class, "store"])->name("store_event");
+Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPDF"])->name("download_pdf");
 
 
 /* --------------------------------------------------------------------- */

@@ -5,7 +5,7 @@
     </x-slot>
 
     <div class="row">
-        <div class="offset-3 col-md-6 mt-2">
+        <div class="offset-3 col-md-6 mt-2">    
             <img src="/{{$event->photo}}" alt="image_évènement"><br/>
             <h1 class="text-primary text_title"><strong>{{$event->title}}</strong></h1><br/>
             <p>{{$event->description}}</p><br/>
@@ -29,6 +29,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-2 mt-2">    
+            <a href="{{route('download_pdf',$event)}}" class="btn btn-primary" >Télecharger une version pdf</a>
         </div>
     </div>
 </x-app-layout>

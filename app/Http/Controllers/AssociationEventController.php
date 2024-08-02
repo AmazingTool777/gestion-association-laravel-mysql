@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AssociationEvent;
 use Illuminate\Http\Request;
 use Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
 class AssociationEventController extends Controller
 {
    
@@ -31,6 +32,7 @@ class AssociationEventController extends Controller
             'location'=>['required'],
             'posted_by'=>auth()->id,
         ]);
+
         if(request('photo')){
             $image= request('photo');
             $image_name="event_images/".$image->getClientOriginalName();
@@ -39,7 +41,6 @@ class AssociationEventController extends Controller
            }else{
             $result['photo']="/events_img/1636612872Fambolen-kazo faobe.jpg";
         }    
-        $result['posted_by']=1;
         AssociationEvent::create($result);    
      return redirect()->route('events.index')->with('success','Evenement crée.');
     }
@@ -67,6 +68,13 @@ class AssociationEventController extends Controller
    
     public function destroy(AssociationEvent $associationEvent)
     {
-       
+        $associationEvent->delete();
+        return redirect()->route('events.index')->with('success','Evènement supprimé.');
+    }
+    public function downloadPDF($id){
+        $event=AssociationEvent::findOrFail($id);
+        PDF::SetOptions(["defaultPaperSize"=>"a4"]);
+        $pdf= PDF::loadView('events.download_event',['event'=>$event]);
+        return $pdf->download('évènement_'.$event->title.'pdf');
     }
 }
