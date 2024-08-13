@@ -1,9 +1,22 @@
-@forward "./components/user-avatar";
+@forward "../components/user-avatar";
+@forward "./sidenav";
 
 .app-navbar {
     height: 4rem;
     background: #fff;
     box-shadow: 0px 2px 4px rgba(100, 100, 100, 0.5);
+
+    &__sidenav-toggle {
+        g#Hamburger {
+            transition: 0.3s;
+        }
+
+        &:hover {
+            g#Hamburger {
+                fill: var(--bs-primary);
+            }
+        }
+    }
 
     &__main-nav-links-list {
         li {
@@ -96,5 +109,21 @@
 
     &.toggle-open {
         box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.9);
+    }
+}
+
+.show-lg {
+    @media only screen and (max-width: 1077px) {
+        display: none !important;
+    }
+}
+.show-md {
+    @media only screen and (max-width: 768px) {
+        display: none !important;
+    }
+}
+.hide-lg {
+    @media only screen and (min-width: 1078px) {
+        display: none !important;
     }
 }

@@ -1,38 +1,54 @@
 <header class="app-navbar sticky top-0 flex justify-between items-center pr-4">
-    {{-- Logo --}}
-    <a href="/" aria-label="Page d'accueil" class="block h-full nav-logo">
-        <img src="/img/logo-xl.png" alt="Logo étendue" class="block h-full">
-    </a>
+    <div class="flex items-center h-full">
+        {{-- Side navbar toggle --}}
+        <button id="sidenav-toggle" aria-label="Afficher le menu de navigation" aria-controls="app-sidenav"
+            data-navbar-menu-target="app-sidenav" class="app-navbar__sidenav-toggle px-2 py-1 ml-2 mr-4 hide-lg">
+            <svg height="25px" version="1.1" viewBox="0 0 25 25" width="25px" xmlns="http://www.w3.org/2000/svg"
+                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title />
+                <desc />
+                <defs />
+                <g fill="none" fill-rule="evenodd" id="TabBar-Icons" stroke="none" stroke-width="1">
+                    <g fill="#000000" id="Hamburger">
+                        <path
+                            d="M0,2 L25,2 L25,6 L0,6 L0,2 Z M0,10 L25,10 L25,14 L0,14 L0,10 Z M0,18 L25,18 L25,22 L0,22 L0,18 Z" />
+                    </g>
+                </g>
+            </svg>
+        </button>
+        {{-- Logo --}}
+        <a href="/" aria-label="Page d'accueil" class="block h-full nav-logo">
+            <img src="/img/logo-xl.png" alt="Logo étendue" class="block h-full">
+        </a>
+    </div>
     {{-- Liens de navigation --}}
-    <nav aria-label="Menu de navigation principale" class="h-full">
+    <nav aria-label="Menu de navigation principale" class="show-lg h-full">
+        @php
+            $mainLinks = [
+                ['href' => '/', 'label' => 'Accueil'],
+                ['href' => '/about', 'label' => 'HelloAsso'],
+                ['href' => '/events', 'label' => 'Evénements'],
+                ['href' => '/contact', 'label' => 'Nous contacter'],
+            ];
+        @endphp
         <ul class="app-navbar__main-nav-links-list flex gap-x-4 h-full">
-            <li>
-                <x-nav-link href="/" class="flex items-center h-full" active-class-name="active">
-                    Accueil
-                </x-nav-link>
-            </li>
-            <li>
-                <x-nav-link href="/x-nav-linkbout" class="flex items-center h-full" active-class-name="active">
-                    HelloAsso
-                </x-nav-link>
-            </li>
-            <li>
-                <x-nav-link href="/events" class="flex items-center h-full" active-class-name="active">
-                    Evénements
-                </x-nav-link>
-            </li>
-            <li>
-                <x-nav-link href="/contact" class="flex items-center h-full" active-class-name="active">
-                    Nous contacter
-                </x-nav-link>
-            </li>
+            @foreach ($mainLinks as $link)
+                <li>
+                    <x-nav-link href="{{ $link['href'] }}" class="flex items-center h-full" active-class-name="active">
+                        {{ $link['label'] }}
+                    </x-nav-link>
+                </li>
+            @endforeach
         </ul>
     </nav>
+    {{-- Secondary navigation --}}
+    <x-app-layout.sidenav />
+    {{-- Auth navigation --}}
     <nav aria-label="Navigation d'authentification et appel à action"
         class="flex items-center flex-row-reverse gap-x-4">
         @guest
             {{-- Authentication links --}}
-            <ul class="app-navbar__auth-links flex gap-x-4">
+            <ul class="app-navbar__auth-links show-md flex gap-x-4">
                 <li><a href="/auth/signup" class="text-primary">Devenir membre</a></li>
                 <li><a href="{{ route('login') }}" class="text-primary">Se connecter</a></li>
             </ul>
@@ -130,6 +146,6 @@
     @endpush
 
     @push('scripts')
-        @vite('resources/js/navbar.js')
+        @vite('resources/js/layouts/navbar.auth.js')
     @endpush
 @endauth

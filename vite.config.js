@@ -17,12 +17,13 @@ export default defineConfig({
                 "resources/css/lib/fontawesome.css",
                 // SCSS
                 "resources/scss/lib/bootstrap.scss",
-                "resources/scss/navbar.scss",
+                "resources/scss/layouts/navbar.scss",
                 "resources/scss/login.scss",
                 "resources/scss/signup.scss",
                 // Javascript
                 "resources/js/app.js",
-                "resources/js/navbar.js",
+                "resources/js/layouts/navbar.js",
+                "resources/js/layouts/navbar.auth.js",
             ],
             refresh: true,
         }),
