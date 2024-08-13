@@ -1,0 +1,41 @@
+:root {
+    --app-sidenav-z-index: 1000;
+}
+
+.app-sidenav-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--app-sidenav-z-index);
+    display: none;
+    transition-duration: 0.3s;
+}
+
+.app-sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    z-index: calc(var(--app-sidenav-z-index) + 1);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition-duration: 0.3s;
+
+    &.menu-open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &__link {
+        border-radius: 1.75rem;
+
+        &.active:hover {
+            background-color: rgb(239 198 0 / 0.5) !important;
+        }
+    }
+}
