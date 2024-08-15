@@ -1,0 +1,192 @@
+@forward "./components/btn";
+@use "./mixins/font-face" as fontFace;
+
+// @font-face rules
+@include fontFace.Quicksand;
+@include fontFace.Storytella;
+
+.intro {
+    &__hero {
+        height: min(calc(100vh - var(--app-navbar-height)), 37.5rem);
+        background-image: url("/public/img/children-hands.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__title {
+        color: #fff;
+        font-family: Quicksand;
+
+        strong {
+            font-family: storytella;
+        }
+    }
+
+    &__description {
+        color: #fff;
+        max-width: 36rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    &__social-medias {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+
+        a {
+            font-size: 1.125rem;
+            color: #fff;
+            opacity: 0.8;
+            transition-duration: 0.3s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.intro-info-card {
+    &__layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 25rem;
+        margin: -3.125rem auto 0;
+        background-color: #fff;
+    }
+
+    &__play-btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__contacts-title {
+        font-size: 0.75rem;
+    }
+
+    @media (min-width: 688px) {
+        &__layout {
+            flex-direction: row;
+            max-width: 41.625rem;
+        }
+
+        &__scroll-down {
+            width: 4rem;
+            position: relative;
+
+            p {
+                width: 5rem;
+                transform: rotateZ(-90deg) translate(20%, -75%);
+                position: absolute;
+                top: 50%;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        &__layout {
+            max-width: 53.125rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-bottom: -3.8125rem;
+        }
+
+        &__contacts {
+            flex-direction: row;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+    }
+}
+
+.about-us {
+    @media (min-width: 992px) {
+        padding-top: 9rem;
+    }
+
+    &__title,
+    &__description,
+    &__bible-verse {
+        font-family: Quicksand;
+    }
+
+    &__layout {
+        @media screen and (min-width: 1280px) {
+            max-width: 80rem !important;
+        }
+    }
+
+    &__illustration-paint-brush {
+        object-fit: cover;
+        object-position: center;
+        max-height: 38.4375rem;
+        min-height: 35rem;
+    }
+}
+
+.services {
+    font-family: Quicksand;
+}
+
+.service-feature {
+    &--medical-aid {
+        --icon-color: #d87e93;
+
+        .service-feature__illustration {
+            background-image: url("/public/img/icon_1-1.png");
+        }
+    }
+
+    &--support {
+        --icon-color: #f1b366;
+
+        .service-feature__illustration {
+            background-image: url("/public/img/icon_2-2.png");
+        }
+    }
+
+    &--food-aid {
+        --icon-color: #94c29c;
+
+        .service-feature__illustration {
+            background-image: url("/public/img/icon_3-3.png");
+        }
+    }
+
+    &--charity {
+        --icon-color: #8cb3d4;
+
+        .service-feature__illustration {
+            background-image: url("/public/img/icon_4-4.png");
+        }
+    }
+
+    &__illustration {
+        width: 8rem;
+        height: 8rem;
+        background-position: center;
+        background-size: 75%;
+        background-repeat: no-repeat;
+
+        svg {
+            margin: auto;
+            fill: var(--icon-color);
+        }
+    }
+
+    &__title {
+        opacity: 0.9;
+    }
+}
