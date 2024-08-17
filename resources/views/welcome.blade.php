@@ -8,6 +8,7 @@
         {{-- Intro section --}}
         <section aria-labelledby="intro-title" aria-describedby="intro-description" class="intro relative">
             <div class="intro__hero relative h-full flex items-center justify-center text-center">
+                {{-- Main content --}}
                 <div class="relative [z-index:1] space-y-6 px-8 lg:px-11 xl:px-16 flex flex-col items-center max-w-4xl">
                     <h1 id="intro-title" class="intro__title font-semibold text-4xl md:text-5xl lg:text-6xl">
                         Nous travaillons dans toutes les régions du pays pour sauver des vies et
@@ -18,8 +19,25 @@
                         être heureux au quotidien.
                     </p>
                 </div>
+                {{-- Caroussel --}}
+                <div class="carousel intro-carousel" data-slide="carousel">
+                    <div class="carousel__items" data-carousel="items">
+                        <div class="carousel__item">
+                            <img src="/img/children-hands.jpg" alt="Children's hands"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel__item">
+                            <img src="/img/children-smiles.jpg" alt="Children's smiles"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel__item active">
+                            <img src="/img/children-observation.jpg" alt="Children's observation"
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+                </div>
+                {{-- Social media links --}}
                 <aside>
-                    {{-- Social media links --}}
                     <section aria-label="Réseaux sociaux" class="intro__social-medias">
                         <ul class="m-0 p-0 list-none space-y-2">
                             <li>
@@ -118,7 +136,8 @@
                 {{-- Illustration --}}
                 <div class="about-us__illustration w-full relative">
                     <img src="/img/login-bg.png" alt="Paint brush" class="block about-us__illustration-paint-brush">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
+                    <div
+                        class="about-us__illustration-card absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
                         <img src="/img/community-tree.jpg" alt="Community tree">
                         {{-- Signup link --}}
                         <a href="{{ route('signup') }}"
@@ -137,7 +156,7 @@
                 Nos services
             </h2>
             <p id="services-description"
-                class="services__description text-primary text-3xl sm:text-4xl lg:text-5xl mb-12 md:mb-16 mx-auto max-w-lg lg:max-w-2xl px-3">
+                class="services__description text-primary text-3xl sm:text-4xl lg:text-5xl mb-12 md:mb-16 lg:mb-20 mx-auto max-w-lg lg:max-w-2xl px-3">
                 <strong>Ce que nous apportons</strong> à l'humanité
             </p>
             <div
@@ -198,6 +217,10 @@
             </div>
         </section>
     </main>
+
+    @push('scripts')
+        @vite('resources/js/welcome.js')
+    @endpush
 </x-app-layout>
 
 {{-- SVG icons to be referenced in the body of the page --}}

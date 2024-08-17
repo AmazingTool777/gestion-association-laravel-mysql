@@ -49,6 +49,7 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/layouts/navbar.js",
                 "resources/js/layouts/navbar.auth.js",
+                "resources/js/welcome.js",
             ],
             refresh: true,
         }),
