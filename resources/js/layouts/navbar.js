@@ -4,5 +4,4 @@ import setupNavbarMenu from "../components/navbar-menu";
 setupNavbarMenu({
     menuId: "app-sidenav",
     overlay: "app-sidenav-overlay",
-    defaultOpen: true,
 });
