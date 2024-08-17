@@ -44,7 +44,7 @@
                     </div>
                 </form>
                 <p class="text-center mt-14">
-                    <a href="#" class="text-sm text-gray-700 hover:text-black duration-300">
+                    <a href="{{ route('signup') }}" class="text-sm text-gray-700 hover:text-black duration-300">
                         Devenez membre ici
                         <i class="fa-solid fa-arrow-right-long ml-2"></i>
                     </a>
