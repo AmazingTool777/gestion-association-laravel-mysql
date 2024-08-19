@@ -1,0 +1,14 @@
+@use "./mixins/tailwindcss" as *;
+
+// TailwindCSS
+@include TailwindCSS;
+
+.submit-btn {
+    background-color: #57b846;
+    color: #fff !important;
+    font-weight: 600;
+
+    &:hover {
+        background-color: darken($color: #57b846, $amount: 4);
+    }
+}

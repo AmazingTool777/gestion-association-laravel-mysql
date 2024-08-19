@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "onecentlin.laravel-extension-pack",
+        "MehediDracula.php-namespace-resolver",
+        "bmewburn.vscode-intelephense-client"
+    ]
+}

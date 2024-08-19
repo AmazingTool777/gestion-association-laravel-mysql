@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,39 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Authentication
+|--------------------------------------------------------------------------
+|
+*/
+
+// Login page
+Route::get('/auth/login', [AuthController::class, "loginShow"])->name("login");
+
+// Login process
+Route::post('/auth/login', [AuthController::class, "login"])->name("login.submit");
+
+// Signup page
+Route::get('/auth/signup', [AuthController::class, "signupShow"])->name("signup");
+
+// Signup process
+Route::post('/auth/signup', [AuthController::class, "signup"])->name("signup.submit");
+
+// Logout
+Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
+
+/* --------------------------------------------------------------------- */
+
+/*
+|--------------------------------------------------------------------------
+| Back-office: Dashboard
+|--------------------------------------------------------------------------
+|
+*/
+
+// Dashboard page
+Route::get('/back-office/dashboard', [DashboardController::class, "index"])->name("back-office.dashboard");
+
+/* --------------------------------------------------------------------- */

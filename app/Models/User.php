@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -42,4 +43,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * RELATIONSHIP: The profile that is associated with the user
+     */
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    /**
+     * HELPER: Whether the user is an admin or not
+     *
+     * @param $strict If true, the user must have the exact role of "ADMIN"
+     */
+    public function isAdmin(bool $strict = false)
+    {
+        if ($strict) {
+            return $this->role === "ADMIN";
+        }
+        return $this->role !== "BASIC";
+    }
+
+    /**
+     * HELPER: Whether the user is a super admin or not
+     */
+    public function isSuperAdmin()
+    {
+        return $this->role === "SUPER_ADMIN";
+    }
 }
