@@ -1,10 +1,14 @@
 @forward "./components/btn";
 @forward "./components/carousel";
 @use "./mixins/font-face" as fontFace;
+@use "./mixins/tailwindcss" as *;
 
 // @font-face rules
 @include fontFace.Quicksand;
 @include fontFace.Storytella;
+
+// TailwindCSS
+@include TailwindCSS;
 
 .intro {
     &__hero {
