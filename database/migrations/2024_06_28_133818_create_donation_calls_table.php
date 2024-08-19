@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('donation_calls', function (Blueprint $table) {
             $table->id();
             $table->string("title");
+            $table->string("type");
             $table->text("description");
             $table->unsignedBigInteger("collected_amount")->default(0);
             $table->unsignedBigInteger("required_amount");
