@@ -12,6 +12,7 @@ class DonationCall extends Model
     protected $fillable = [
         'title',
         'description',
+        'type',
         'collected_amount',
         'required_amount',
         'photo',
