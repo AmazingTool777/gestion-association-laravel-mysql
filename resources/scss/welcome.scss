@@ -6,6 +6,11 @@
 @include fontFace.Quicksand;
 @include fontFace.Storytella;
 
+// TailwindCSS
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .intro {
     &__hero {
         height: min(calc(100vh - var(--app-navbar-height)), 37.5rem);
