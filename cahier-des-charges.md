@@ -50,6 +50,7 @@ Ce qui est déjà là
 -   Liste des appels aux dons
 -   Un appel au don:
     -   Photo
+    -   Type
     -   Description
     -   Titre
     -   Montant collecté
@@ -77,6 +78,7 @@ Ce qui est déjà là
 
 -   Formulaire:
     -   Photo
+    -   Type
     -   Description
     -   Titre
     -   Montant requis
