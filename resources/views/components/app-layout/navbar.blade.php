@@ -113,7 +113,7 @@
             </div>
         @endauth
         {{-- Call To Action: Faire un don --}}
-        <a href="#" class="app-navbar__cta text-primary">Faire un don</a>
+        <a href="{{ route('donation-calls') }}" class="app-navbar__cta text-primary">Faire un don</a>
     </nav>
 </header>
 

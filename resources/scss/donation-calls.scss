@@ -1,0 +1,81 @@
+@use "./mixins/tailwindcss" as *;
+@use "./mixins/font-face" as fontFace;
+
+// TailwindCSS
+@include TailwindCSS;
+
+// @font-face
+@include fontFace.Quicksand;
+
+.page-wrapper {
+    min-height: calc(100vh - var(--app-navbar-height));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Quicksand;
+}
+
+.donation-call-card {
+    --box-shadow-opacity: 0.1;
+
+    box-shadow: 4px 4px 8px rgba(111, 111, 111, var(--box-shadow-opacity));
+    transition-duration: 0.3s;
+
+    &:hover {
+        --box-shadow-opacity: 0.4;
+    }
+
+    &__illustration-layout {
+        @media screen and (min-width: 768px) {
+            flex: 1 0 14.375rem;
+        }
+    }
+
+    &__illustration {
+        object-fit: cover;
+        object-position: center;
+        height: 14.375rem;
+    }
+
+    &__content-layout {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        @media screen and (min-width: 768px) {
+            flex: 1 1 auto;
+            padding-left: 1.75rem;
+            padding-right: 1.75rem;
+        }
+    }
+
+    &__type {
+        background-color: #43c0e5;
+        color: #fff;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+
+    &__description {
+        strong {
+            color: #000;
+        }
+    }
+
+    &__progressbar {
+        --progressbar-height: 0.75rem;
+
+        height: var(--progressbar-height);
+        border-radius: calc(var(--progressbar-height) / 2);
+    }
+
+    &__progressbar-inner {
+        border-radius: calc(var(--progressbar-height) / 2);
+        height: 100%;
+        background-color: #31e488;
+    }
+}
