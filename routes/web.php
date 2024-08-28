@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DonationCallController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,18 @@ Route::post('/auth/signup', [AuthController::class, "signup"])->name("signup.sub
 
 // Logout
 Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
+
+/* --------------------------------------------------------------------- */
+
+/*
+|--------------------------------------------------------------------------
+| Donation call
+|--------------------------------------------------------------------------
+|
+*/
+
+// Donation calls page
+Route::get("/donation-calls", [DonationCallController::class, "index"])->name("donation-calls");
 
 /* --------------------------------------------------------------------- */
 
