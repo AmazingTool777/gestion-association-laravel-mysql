@@ -51,4 +51,9 @@ class DonationCallController extends Controller
             )
         );
     }
+
+    public function show(Request $request, DonationCall $donationCall)
+    {
+        return view("donation_call.detail", compact("donationCall"));
+    }
 }

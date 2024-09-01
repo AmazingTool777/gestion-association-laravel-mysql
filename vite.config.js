@@ -47,6 +47,7 @@ export default defineConfig({
                 "resources/scss/login.scss",
                 "resources/scss/signup.scss",
                 "resources/scss/donation-call/list.scss",
+                "resources/scss/donation-call/detail.scss",
                 // Javascript
                 "resources/js/app.js",
                 "resources/js/layouts/navbar.js",
@@ -54,6 +55,7 @@ export default defineConfig({
                 "resources/js/components/filters-field.js",
                 "resources/js/welcome.js",
                 "resources/js/donation-call/list.js",
+                "resources/js/donation-call/detail.js",
             ],
             refresh: true,
         }),

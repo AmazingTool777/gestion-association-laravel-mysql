@@ -62,6 +62,9 @@ Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPD
 // Donation calls page
 Route::get("/donation-calls", [DonationCallController::class, "index"])->name("donation-calls");
 
+// Donation calls page
+Route::get("/donation-calls/{donationCall}", [DonationCallController::class, "show"])->name("donation-call");
+
 /* --------------------------------------------------------------------- */
 
 /*
