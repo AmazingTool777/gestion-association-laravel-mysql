@@ -6,23 +6,7 @@ use Illuminate\View\Component;
 
 class NavLink extends Component
 {
-    /**
-     * The class name applied to the link when the link is active i.e matches the current URL path
-     * @var string
-     */
-    public $activeClassName = "active";
-
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct(?string $activeClassName)
-    {
-        if ($activeClassName) {
-            $this->activeClassName = $activeClassName;
-        }
-    }
+    public function __construct(public string $href, public string $activeClassName = "active") {}
 
     /**
      * Checks whether the link is active or not

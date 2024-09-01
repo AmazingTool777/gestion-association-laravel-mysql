@@ -7,6 +7,8 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ProfileSeeder;
 use Database\Seeders\AssociationEventSeeder;
+use Database\Seeders\DonationCallSeeder;
+use Database\Seeders\DonationCallTypeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +21,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ProfileSeeder::class,
             AssociationEventSeeder::class,
+            DonationCallTypeSeeder::class,
+            DonationCallSeeder::class,
         ]);
     }
 }

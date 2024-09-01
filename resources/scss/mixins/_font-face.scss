@@ -1,0 +1,13 @@
+@mixin Storytella {
+    @font-face {
+        font-family: "storytella";
+        src: url("/resources/fonts/storytella/storytella.ttf");
+    }
+}
+
+@mixin Quicksand {
+    @font-face {
+        font-family: Quicksand;
+        src: url("/resources/fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
+    }
+}

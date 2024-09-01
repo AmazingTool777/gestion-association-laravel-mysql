@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DonationCallController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssociationEventController;
 /*
@@ -50,6 +51,18 @@ Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPD
 /* --------------------------------------------------------------------- */
 
 
+
+/*
+|--------------------------------------------------------------------------
+| Donation call
+|--------------------------------------------------------------------------
+|
+*/
+
+// Donation calls page
+Route::get("/donation-calls", [DonationCallController::class, "index"])->name("donation-calls");
+
+/* --------------------------------------------------------------------- */
 
 /*
 |--------------------------------------------------------------------------

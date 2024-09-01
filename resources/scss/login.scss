@@ -1,3 +1,8 @@
+@use "./mixins/tailwindcss" as *;
+
+// TailwindCSS
+@include TailwindCSS;
+
 .submit-btn {
     background-color: #57b846;
     color: #fff !important;

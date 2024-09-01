@@ -1,3 +1,8 @@
+@use "./mixins/tailwindcss" as *;
+
+// TailwindCSS
+@include TailwindCSS;
+
 .paint-background {
     position: absolute;
     left: 50%;
