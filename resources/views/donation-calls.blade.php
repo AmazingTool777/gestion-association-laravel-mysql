@@ -1,3 +1,10 @@
+@php
+    // The desired locale
+    $locale = 'fr_FR';
+    // Create a new IntlDateFormatter object
+    $dateFormatter = new IntlDateFormatter($locale, IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+@endphp
+
 <x-app-layout>
     <x-slot:head>
         <title>Appels aux dons</title>
@@ -96,9 +103,12 @@
                                     class="donation-call-card__illustration block w-full">
                             </div>
                             <div class="donation-call-card__content-layout py-4">
-                                <h2 id="{{ $htmlId }}" class="font-bold mb-3 lg:text-lg">
+                                <h2 id="{{ $htmlId }}" class="font-bold lg:text-lg mb-1">
                                     {{ $donationCall->title }}
                                 </h2>
+                                <p class="text-sm text-black/65 mb-3">
+                                    Lancé le {{ $dateFormatter->format($donationCall->created_at) }}
+                                </p>
                                 <p class="donation-call-card__type absolute top-1 left-1 py-2 px-4 rounded">
                                     {{ $donationCall->type->name }}
                                 </p>
