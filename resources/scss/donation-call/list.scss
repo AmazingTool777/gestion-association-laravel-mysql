@@ -1,5 +1,5 @@
-@use "./mixins/tailwindcss" as *;
-@use "./mixins/font-face" as fontFace;
+@use "../mixins/tailwindcss" as *;
+@use "../mixins/font-face" as fontFace;
 
 // TailwindCSS
 @include TailwindCSS;

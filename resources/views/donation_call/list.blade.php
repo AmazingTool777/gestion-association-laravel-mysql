@@ -8,7 +8,7 @@
 <x-app-layout>
     <x-slot:head>
         <title>Appels aux dons</title>
-        @vite('resources/scss/donation-calls.scss')
+        @vite('resources/scss/donation-call/list.scss')
     </x-slot>
 
     <main class="page-wrapper bg-gray-100">

@@ -18,6 +18,7 @@ class DonationCallController extends Controller
         $sortBy = $request->query("sort_by", $defaultSort['sort_by']);
         $order = $request->query("order", $defaultSort['order']);
 
+        // Query builder initialization
         $query = DonationCall::with("type")->orderBy($sortBy, $order);
 
         // Text search
@@ -38,10 +39,11 @@ class DonationCallController extends Controller
         // Query execution
         $results = $query->paginate($limit);
 
+        // Retrieving all the types of donation calls for the categories filter
         $donationCallTypes = DonationCallType::get();
 
         return view(
-            'donation-calls',
+            'donation_call.list',
             compact(
                 "donationCallTypes",
                 "defaultSort",
