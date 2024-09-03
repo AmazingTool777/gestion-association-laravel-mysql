@@ -39,17 +39,21 @@ export default defineConfig({
                 // CSS
                 "resources/css/lib/tailwind.css",
                 "resources/css/lib/fontawesome.css",
+                "resources/css/events.css",
                 // SCSS
                 "resources/scss/lib/bootstrap.scss",
                 "resources/scss/layouts/navbar.scss",
                 "resources/scss/welcome.scss",
                 "resources/scss/login.scss",
                 "resources/scss/signup.scss",
+                "resources/scss/donation-calls.scss",
                 // Javascript
                 "resources/js/app.js",
                 "resources/js/layouts/navbar.js",
                 "resources/js/layouts/navbar.auth.js",
+                "resources/js/components/filters-field.js",
                 "resources/js/welcome.js",
+                "resources/js/donation-calls.js",
             ],
             refresh: true,
         }),

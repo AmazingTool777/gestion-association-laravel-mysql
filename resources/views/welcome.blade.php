@@ -3,7 +3,7 @@
         <title>HelloAsso</title>
         @vite('resources/scss/welcome.scss')
     </x-slot>
-
+    
     <main>
         {{-- Intro section --}}
         <section aria-labelledby="intro-title" aria-describedby="intro-description" class="intro relative">

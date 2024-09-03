@@ -1,0 +1,26 @@
+body{
+    background-image:url('events_img/events_inner-bg.png');
+}
+.text_description{
+    color: black;
+    font-size: 1em;
+    font-weight: 400;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+}
+.text_title{
+    font-size:1.2em;
+     font-weight:500
+}
+.text_detail{
+    color: black;
+    font-size: 0.9em;
+    font-weight:500
+}
+.card.card_info{
+    height: 250;
+    background: red;
+}

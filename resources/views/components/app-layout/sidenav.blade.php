@@ -46,7 +46,7 @@
     @endguest
     {{-- Donation CTA --}}
     <hr class="my-3">
-    <a href="#"
+    <a href="{{ route('donation-calls') }}"
         class="app-sidenav__link py-3 px-4 font-semibold block text-primary hover:bg-secondary duration-300 border border-solid border-secondary">
         <i class="fa-solid fa-hand-holding-heart mr-3"></i>
         Faire un don

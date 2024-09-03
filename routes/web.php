@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DonationCallController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AssociationEventController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,26 @@ Route::post('/auth/signup', [AuthController::class, "signup"])->name("signup.sub
 
 // Logout
 Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.submit");
+
+//evenements
+Route::resource('events', AssociationEventController::class);
+Route::post('/store_event',[AssociationEventController::class, "store"])->name("store_event");
+Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPDF"])->name("download_pdf");
+
+
+/* --------------------------------------------------------------------- */
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Donation call
+|--------------------------------------------------------------------------
+|
+*/
+
+// Donation calls page
+Route::get("/donation-calls", [DonationCallController::class, "index"])->name("donation-calls");
 
 /* --------------------------------------------------------------------- */
 
