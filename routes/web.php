@@ -44,7 +44,7 @@ Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.sub
 
 //evenements
 Route::resource('events', AssociationEventController::class);
-Route::post('/store_event',[AssociationEventController::class, "store"])->name("store_event");
+Route::post('/store_event', [AssociationEventController::class, "store"])->name("store_event");
 Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPDF"])->name("download_pdf");
 
 
@@ -64,6 +64,9 @@ Route::get("/donation-calls", [DonationCallController::class, "index"])->name("d
 
 // Donation calls page
 Route::get("/donation-calls/{donationCall}", [DonationCallController::class, "show"])->name("donation-call");
+
+// Downloads the PDF of the donation call
+Route::get("/donation-calls/{donationCall}/pdf", [DonationCallController::class, "downloadPDF"])->name("donation-call.pdf");
 
 /* --------------------------------------------------------------------- */
 

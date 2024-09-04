@@ -161,5 +161,5 @@
     </main>
 
     {{-- Javascript --}}
-    @vite('resources/js/donation-calls.js')
+    @vite('resources/js/donation-call/list.js')
 </x-app-layout>

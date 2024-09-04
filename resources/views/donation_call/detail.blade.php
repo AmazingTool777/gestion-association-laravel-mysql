@@ -78,7 +78,7 @@
             </section>
 
             {{-- Donation call PDF download button --}}
-            <a href="#" class="btn btn-primary mt-8">
+            <a href="{{ route('donation-call.pdf', $donationCall->id) }}" class="btn btn-primary mt-8">
                 <i class="fa-solid fa-file-pdf mr-2"></i>
                 Obtenir la version PDF
             </a>
@@ -196,8 +196,10 @@
         </main>
     </div>
 
-    {{-- Javascript --}}
-    @push('scripts')
-        @vite('resources/js/donation-call/detail.js')
-    @endpush
+    @auth
+        {{-- Javascript --}}
+        @push('scripts')
+            @vite('resources/js/donation-call/detail.js')
+        @endpush
+    @endauth
 </x-app-layout>
