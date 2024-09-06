@@ -1,66 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# HelloAsso
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A crowdfunding project as donations to the people in need. The project is built with **Laravel** and uses **MySQL** as the database.
 
-## About Laravel
+## Table of content
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. [Installation](#installation)
+2. [Configuration](#configuration)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [Style guide](#style-guide)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. First, clone the repository into your local machine:
 
-## Learning Laravel
+```bash
+git clone https://github.com/AmazingTool777/gestion-association-laravel-mysql.git
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Install the Laravel project's PHP dependencies using [Composer](https://getcomposer.org/):
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+If you do not have Composer installed, you can dowwnload it [here](https://getcomposer.org/download/).
 
-## Laravel Sponsors
+3. Install the [NPM](https://www.npmjs.com/) dependencies of the project:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+# Using NPM
+npm install
 
-### Premium Partners
+# Or using PNPM
+pnpm install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+# Or using Bun
+bun install
+```
+
+Make sure to have [Node.js](https://nodejs.org/en/download/package-manager/current) installed for **NPM** to work. Alternatively, you can install [PNPM](https://pnpm.io/) as an alternative to **NPM** or [Bun](https://bun.sh/) as alternative to **Node.js** if you prefer.
+
+4. Install either [WAMP server](https://www.wampserver.com/) or [XAMPP](https://www.apachefriends.org/fr/download.html) in order to have an **Apache server** and a **MySQL database** database instance running. **XAMPP** is **the most recommended** option and you can download it [here](https://www.apachefriends.org/download.html).
+
+## Configuration
+
+1. Create a `.env` file in the root of the project, then copy the content of the `.env.example` file into the `.env` file.
+
+2. Create an empty database instance in the MySQL server. Note value of the **name** of the database as well as the **username** and the **password** used to access the database, then update the database-related keys in the `.env` file as follows:
+
+```txt
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=<database_name>
+DB_USERNAME=<database_username>
+DB_PASSWORD=<database_password>
+```
+
+3. Run the database migrations:
+
+```bash
+php artisan migrate
+```
+
+4. Seed the database:
+
+```bash
+php artisan db:seed
+```
+
+5. Enable the **Intl** extension in the `php.ini` file by uncommenting the `extension=php_intl.dll` line (remove the `;` at the start of the line):
+
+```txt
+;extension=php_intl.dll
+```
+
+The [Intl](https://www.php.net/manual/fr/book.intl.php) is an modern API that allows us to write Date-Time in various locales.
+
+## Usage
+
+1. Run the [Vite](https://vitejs.dev/) development server for processing frontend assets:
+
+```bash
+# Using NPM
+npm run dev
+
+# Using PNPM
+pnpm dev
+
+# Using Bun
+bun dev
+```
+
+2. Run the Laravel server:
+
+```bash
+php artisan serve
+```
+
+3. Open the browser and go to `http://127.0.0.1:8000`. Now you should see the application running. Happy Coding! 😋🎉
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The project has **2 mandatory branches**:
 
-## Code of Conduct
+-   `main`: The main branch.
+-   `develop`: The active development branch.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### `main` branch:
 
-## Security Vulnerabilities
+This is the **main** branch.
+We **do not directly push commits** onto this branch. Instead, the commits from the `develop` branch are to be merged onto this branch. This branch is designed to maintain a **clean** and **working** state of the application.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### `develop` branch:
 
-## License
+This is the branch for the **active development**. This is the branch where all the commits during the active development go.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+However, if multiple people are simultaneously working on the project, then each contributor should create a new branch from the `develop` branch and then merge their own respective branches into the `develop` branch once their work is finished. In that case, the name of the branch should start with a **prefix** depending on the assignment that they are working on. Those prefixes could be: `feature/`, `fix/` or `refactoring/`.
+
+## Style guide
+
+### English language codabase
+
+The codebase should be in **english** as much as possible except for the pages' content which is in french. This means that the name of **files**, **variable**, **classes**, **methods** and **branches** should be written in english.
+
+### Per-feature folder structure
+
+A **feature** refers to the major entities (tables) in the database that the basis of the application. For example, we have _user_, _donation call_ as features. _Auth_ is also considered as a feature.
+
+The **resources** (**views**, **css**, **scss**, **js**) that are **related to specific features** inside the `/resources` directory should be organized **by feature**.
+
+For instance, the folder structrure of the resources used to show the page of a list of users should be as follows:
+
+```
+Project/
+├── ... other files
+├── resources/
+│   ├── css/
+│       ├── user/
+│           ├── list.css
+│           ├── ... other css files
+│       ├── ... other css files or directories
+│   ├── js/
+│       ├── user/
+│           ├── list.js
+│           ├── ... other js files
+│       ├── ... other js files or directories
+│   ├── views/
+│       ├── user/
+│           ├── list.blade.php
+│           ├── ... other blade templates
+│       ├── ... other blade templates or directories
+│   ├── ... other directories
+├── ... other files and directories
+```

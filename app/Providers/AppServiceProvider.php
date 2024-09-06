@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\ImageService;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use App\Services\DataListQueryParamsUtils;
@@ -15,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('DataListQueryParamsUtils', function ($app) {
             return new DataListQueryParamsUtils();
+        });
+        $this->app->singleton(ImageService::class, function ($app) {
+            return new ImageService();
         });
     }
 

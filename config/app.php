@@ -185,6 +185,7 @@ return [
         //'PDF'=>Barryvdh\DomPDF\Facade::class,
         // 'Example' => App\Facades\Example::class,
         'DataListQueryParamsUtils' => App\Facades\DataListQueryParamsUtilsFacade::class,
+        'ImageFacade' => App\Facades\ImageFacade::class,
     ])->toArray(),
 
 ];

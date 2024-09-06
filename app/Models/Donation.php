@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\DonationCall;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Donation extends Model
 {
@@ -19,4 +20,19 @@ class Donation extends Model
     protected $casts = [
         "giver_info" => "array"
     ];
+
+    /**
+     * ----------------------------------------------------
+     * Associations
+     * ----------------------------------------------------
+     */
+
+    public function donationCall()
+    {
+        return $this->belongsTo(DonationCall::class, "donation_call_id");
+    }
+
+    /**
+     * ----------------------------------------------------
+     */
 }

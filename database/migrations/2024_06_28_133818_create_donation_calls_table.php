@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('donation_calls', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("type");
             $table->text("description");
-            $table->unsignedBigInteger("collected_amount")->default(0);
+            $table->unsignedBigInteger("collected_amount")->default(1);
             $table->unsignedBigInteger("required_amount");
             $table->string("photo")->nullable();
             $table->json("mobile_payment_phones"); // JSON array of phone numbers
