@@ -49,6 +49,12 @@ class DonationCall extends Model
         ],
     ];
 
+    public function addCollectedAmount(int $amount)
+    {
+        $this->collected_amount += $amount;
+        $this->save();
+    }
+
     /**
      * ----------------------------------------------------
      * Associations

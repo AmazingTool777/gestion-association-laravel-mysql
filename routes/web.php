@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationCallController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssociationEventController;
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,19 @@ Route::get("/donation-calls/{donationCall}", [DonationCallController::class, "sh
 
 // Downloads the PDF of the donation call
 Route::get("/donation-calls/{donationCall}/pdf", [DonationCallController::class, "downloadPDF"])->name("donation-call.pdf");
+
+/* --------------------------------------------------------------------- */
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Donation
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::post("/donations", [DonationController::class, "store"])->middleware("auth")->name("donation.store");
 
 /* --------------------------------------------------------------------- */
 

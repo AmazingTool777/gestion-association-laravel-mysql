@@ -14,6 +14,16 @@
     </x-slot>
 
     <div class="container mx-auto max-w-screen-md pb-20">
+        {{-- Donation success alert after submission --}}
+        @if (session()->has('success'))
+            <div class="alert alert-success mt-2" role="alert">
+                <div class="flex justify-between">
+                    🎉 Votre donation a été enregistré avec succès.
+                    <button type="button" data-bs-dismiss="alert" aria-label="Close" class="btn-close"></button>
+                </div>
+            </div>
+        @endif
+
         {{-- Breadcurmb navigation --}}
         <nav aria-label="breadcrumb" class="pl-1 py-3">
             <ol class="breadcrumb">
@@ -95,7 +105,10 @@
                         // Whether the donation call supports only one mobile payment
                         $supportsSingleMobilePayment = count($donationCall->mobile_payment_phones) === 1;
                     @endphp
-                    <form id="donation-form" method="POST" action="/donations" class="mt-4">
+                    <form id="donation-form" method="POST" action="{{ route('donation.store') }}" class="mt-4">
+                        @csrf
+                        {{-- Hidden field for the donation call id --}}
+                        <input type="hidden" name="donation_call_id" value={{ $donationCall->id }}>
                         {{-- Payment --}}
                         <section aria-labelledby="donation-mobile-money-title" class="mb-4">
                             {{-- Mobile Money payment methods --}}
@@ -128,9 +141,11 @@
                                     Montant de la donation (en Ariary)
                                 </label>
                                 <div class="input-group">
+                                    @php
+                                        $maxAmount = $donationCall->required_amount - $donationCall->collected_amount;
+                                    @endphp
                                     <input type="number" id="donation-amount-field" name="amount" value="1"
-                                        min="1" max="{{ $donationCall->required_amount }}" required
-                                        class="form-control">
+                                        min="1" max="{{ $maxAmount }}" required class="form-control">
                                     <span class="input-group-text">Ar</span>
                                 </div>
                             </div>
@@ -163,14 +178,13 @@
                                 <div class="input-group">
                                     <span class="input-group-text">+261</span>
                                     @php
-                                        // $supportsSingleMobilePayment
                                         $placeholder = '3X XX XXX XX';
                                         if ($supportsSingleMobilePayment) {
                                             $placeholder[1] = $donationCall->mobile_payment_phones[0][2];
                                         }
                                     @endphp
                                     <input type="text" id="donation-giver-phone-field" name="donation_giver_phone"
-                                        pattern="^(32|33|34)\s?(\d\s?){6}$" placeholder="{{ $placeholder }}" required
+                                        pattern="^(32|33|34)\s?(\d\s?){7}$" placeholder="{{ $placeholder }}" required
                                         aria-describedby="donation-giver-phone-text" class="form-control">
                                 </div>
                                 <p id="donation-giver-phone-text" class="form-text">

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->text("description");
-            $table->unsignedBigInteger("collected_amount")->default(0);
+            $table->unsignedBigInteger("collected_amount")->default(1);
             $table->unsignedBigInteger("required_amount");
             $table->string("photo")->nullable();
             $table->json("mobile_payment_phones"); // JSON array of phone numbers

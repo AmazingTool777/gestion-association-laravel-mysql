@@ -15,7 +15,7 @@ const mobileMoneyPrefixMap = {
     mvola: "34",
 };
 
-const endPhonePattern = "\\s?(\\d\\s?){6}$";
+const endPhonePattern = "\\s?(\\d\\s?){7}$";
 
 function handleMobileMoneyPaymentChange(e) {
     const mobileMoney = e.target.value;
