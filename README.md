@@ -78,6 +78,12 @@ php artisan db:seed
 
 The [Intl](https://www.php.net/manual/fr/book.intl.php) is an modern API that allows us to write Date-Time in various locales.
 
+6. Generate a **symlink** that links public storage files to the public folder by running the following command:
+
+```bash
+php artisan storage:link
+```
+
 ## Usage
 
 1. Run the [Vite](https://vitejs.dev/) development server for processing frontend assets:
