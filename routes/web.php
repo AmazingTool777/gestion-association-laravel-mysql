@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonationCallController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssociationEventController;
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ Route::post('/auth/logout', [AuthController::class, "logout"])->name("logout.sub
 
 //evenements
 Route::resource('events', AssociationEventController::class);
-Route::post('/store_event',[AssociationEventController::class, "store"])->name("store_event");
+Route::post('/store_event', [AssociationEventController::class, "store"])->name("store_event");
 Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPDF"])->name("download_pdf");
 
 
@@ -61,6 +62,25 @@ Route::get('/download_pdf/{id}', [AssociationEventController::class, "downloadPD
 
 // Donation calls page
 Route::get("/donation-calls", [DonationCallController::class, "index"])->name("donation-calls");
+
+// Donation calls page
+Route::get("/donation-calls/{donationCall}", [DonationCallController::class, "show"])->name("donation-call");
+
+// Downloads the PDF of the donation call
+Route::get("/donation-calls/{donationCall}/pdf", [DonationCallController::class, "downloadPDF"])->name("donation-call.pdf");
+
+/* --------------------------------------------------------------------- */
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Donation
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::post("/donations", [DonationController::class, "store"])->middleware("auth")->name("donation.store");
 
 /* --------------------------------------------------------------------- */
 

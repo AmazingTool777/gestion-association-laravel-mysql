@@ -29,6 +29,33 @@ class DonationCall extends Model
     ];
 
     /**
+     * Map of mobile money prefixes to their names and logos
+     */
+    public static $mobileMoneyPrefixMap = [
+        "032" => [
+            "label" => "Orange Money",
+            "name" => "orange-money",
+            "logo" => "orange-money.png"
+        ],
+        "033" => [
+            "label" => "Airtel Money",
+            "name" => "airtel-money",
+            "logo" => "airtel-money.png"
+        ],
+        "034" => [
+            "label" => "MVola",
+            "name" => "mvola",
+            "logo" => "mvola.jpg"
+        ],
+    ];
+
+    public function addCollectedAmount(int $amount)
+    {
+        $this->collected_amount += $amount;
+        $this->save();
+    }
+
+    /**
      * ----------------------------------------------------
      * Associations
      * ----------------------------------------------------
@@ -57,4 +84,30 @@ class DonationCall extends Model
     /**
      * ----------------------------------------------------
      */
+
+    /**
+     * ----------------------------------------------------
+     * Helpers
+     * ----------------------------------------------------
+     */
+
+    /**
+     * Gets the details about the method of payments supported by the donation call
+     * @return array<mixed> Array of the details per mobile money payment
+     */
+    public function getMobileMoneyPaymentsDetails()
+    {
+        $details = [];
+        foreach ($this->mobile_payment_phones as $phone) {
+            $prefix = substr($phone, 0, 3);
+            $mobileMoney = self::$mobileMoneyPrefixMap[$prefix];
+            $details[] = [
+                "label" => $mobileMoney["label"],
+                "name" => $mobileMoney["name"],
+                "logo_url" => url("/img" . "/" . $mobileMoney["logo"]),
+                "phone" => $phone
+            ];
+        }
+        return $details;
+    }
 }

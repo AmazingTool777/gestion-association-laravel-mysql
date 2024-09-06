@@ -1,0 +1,37 @@
+@forward "../components/btn";
+@use "../mixins/tailwindcss" as *;
+@use "../mixins/font-face" as fontFace;
+
+// TailwindCSS
+@include TailwindCSS;
+
+// @font-face
+@include fontFace.Quicksand;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Quicksand;
+}
+
+.donation-call-image {
+    max-height: 28.625rem;
+}
+
+.donation-call-type-badge {
+    background-color: #43c0e5;
+    font-weight: 700;
+    color: #fff;
+}
+
+.donation-mobile-money-logo {
+    height: 4rem;
+}
+
+.donation-submit.rounded-btn {
+    border-width: 2px;
+    font-weight: 700;
+}
