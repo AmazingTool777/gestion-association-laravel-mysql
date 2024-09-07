@@ -1,7 +1,7 @@
 <x-app-layout :show-navbar="false">
     <x-slot:head>
         <title>Devenir membre</title>
-        @vite('resources/scss/signup.scss')
+        @vite('resources/scss/auth/signup.scss')
     </x-slot>
 
     <main>
