@@ -1,23 +1,10 @@
 @use "../mixins/tailwindcss" as *;
-@use "../mixins/font-face" as fontFace;
 
 // TailwindCSS
 @include TailwindCSS;
 
-// @font-face
-@include fontFace.Quicksand;
-
 .page-wrapper {
     min-height: calc(100vh - var(--app-navbar-height));
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Quicksand;
 }
 
 .donation-call-card {

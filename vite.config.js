@@ -39,13 +39,14 @@ export default defineConfig({
                 // CSS
                 "resources/css/lib/tailwind.css",
                 "resources/css/lib/fontawesome.css",
-                "resources/css/events.css",
+                "resources/css/event/list.css",
+                "resources/css/event/show.css",
                 // SCSS
                 "resources/scss/lib/bootstrap.scss",
-                "resources/scss/layouts/navbar.scss",
+                "resources/scss/layouts/app-layout.scss",
                 "resources/scss/welcome.scss",
-                "resources/scss/login.scss",
-                "resources/scss/signup.scss",
+                "resources/scss/auth/login.scss",
+                "resources/scss/auth/signup.scss",
                 "resources/scss/donation-call/list.scss",
                 "resources/scss/donation-call/detail.scss",
                 // Javascript
