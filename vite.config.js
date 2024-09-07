@@ -39,7 +39,8 @@ export default defineConfig({
                 // CSS
                 "resources/css/lib/tailwind.css",
                 "resources/css/lib/fontawesome.css",
-                "resources/css/events.css",
+                "resources/css/event/list.css",
+                "resources/css/event/show.css",
                 // SCSS
                 "resources/scss/lib/bootstrap.scss",
                 "resources/scss/layouts/app-layout.scss",
