@@ -42,7 +42,7 @@ export default defineConfig({
                 "resources/css/events.css",
                 // SCSS
                 "resources/scss/lib/bootstrap.scss",
-                "resources/scss/layouts/navbar.scss",
+                "resources/scss/layouts/app-layout.scss",
                 "resources/scss/welcome.scss",
                 "resources/scss/login.scss",
                 "resources/scss/signup.scss",
