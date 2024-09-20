@@ -49,10 +49,13 @@ export default defineConfig({
                 "resources/scss/auth/signup.scss",
                 "resources/scss/donation-call/list.scss",
                 "resources/scss/donation-call/detail.scss",
+                "resources/scss/layouts/bo-layout.scss",
+                "resources/scss/bo-dashboard.scss",
                 // Javascript
                 "resources/js/app.js",
                 "resources/js/layouts/navbar.js",
                 "resources/js/layouts/navbar.auth.js",
+                "resources/js/layouts/bo-sidenav.js",
                 "resources/js/components/filters-field.js",
                 "resources/js/welcome.js",
                 "resources/js/donation-call/list.js",
