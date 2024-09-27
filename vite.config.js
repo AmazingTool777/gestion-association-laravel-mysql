@@ -51,6 +51,7 @@ export default defineConfig({
                 "resources/scss/donation-call/detail.scss",
                 "resources/scss/layouts/bo-layout.scss",
                 "resources/scss/bo-dashboard.scss",
+                "resources/scss/donation-call/list.bo.scss",
                 // Javascript
                 "resources/js/app.js",
                 "resources/js/layouts/navbar.js",
@@ -60,6 +61,7 @@ export default defineConfig({
                 "resources/js/welcome.js",
                 "resources/js/donation-call/list.js",
                 "resources/js/donation-call/detail.js",
+                "resources/js/donation-call/list.bo.js",
             ],
             refresh: true,
         }),

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Back-office</title>
     @vite(['resources/scss/lib/bootstrap.scss', 'resources/css/lib/fontawesome.css', 'resources/scss/layouts/bo-layout.scss'])
     {{-- Slot for other head tags --}}
     {{ $head }}
@@ -16,7 +15,7 @@
     <x-bo-layout.navbar />
 
     {{-- Default slot --}}
-    <div class="bo-content-layout px-4 pt-2 pb-8">
+    <div class="bo-content-layout px-4 pt-4 pb-8">
         {{ $slot }}
     </div>
 
