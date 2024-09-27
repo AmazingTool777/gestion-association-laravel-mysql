@@ -17,7 +17,7 @@
             @foreach ($mainLinks as $link)
                 <x-nav-link :href="$link['href']"
                     class="bo-sidenav__link py-3 px-4 font-semibold block text-black/80 hover:bg-black/5 duration-300"
-                    active-class-name="active text-primary bg-secondary/30 hover:bg-secondary/40">
+                    active-class-name="active text-primary bg-secondary/70">
                     <i class="fa-solid {{ $link['icon'] }} mr-3"></i>
                     {{ $link['label'] }}
                 </x-nav-link>
