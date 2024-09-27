@@ -16,7 +16,7 @@
     <x-bo-layout.navbar />
 
     {{-- Default slot --}}
-    <div class="bo-content-layout px-4 pt-2 pb-8">
+    <div class="bo-content-layout px-4 pt-4 pb-8">
         {{ $slot }}
     </div>
 
