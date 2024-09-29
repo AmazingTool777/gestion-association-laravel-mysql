@@ -34,6 +34,22 @@ function donatorsData() {
                 console.log(error);
             }
         },
+        init() {
+            let hasLeftTab = false;
+            // Detect when the user leaves the tab
+            document.addEventListener("visibilitychange", function () {
+                if (document.hidden) {
+                    hasLeftTab = true;
+                }
+            });
+            // Detect when the user returns to the tab
+            window.addEventListener("focus", () => {
+                if (hasLeftTab) {
+                    this.getDonations(this.page, true);
+                    hasLeftTab = false; // Reset the flag
+                }
+            });
+        },
     };
 }
 
