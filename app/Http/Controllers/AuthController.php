@@ -15,7 +15,7 @@ class AuthController extends Controller
 {
     public function loginShow()
     {
-        return view("login");
+        return view("auth.login");
     }
 
     public function login(LoginRequest $request)
@@ -42,7 +42,7 @@ class AuthController extends Controller
 
     public function signupShow()
     {
-        return view("signup");
+        return view("auth.signup");
     }
 
     public function signup(SignupRequest $request)
@@ -56,8 +56,6 @@ class AuthController extends Controller
             "password" => Hash::make($payload["password"]),
             "role" => 'BASIC',
         ]);
-        error_log(json_encode($authUser->toArray()));
-        error_log("User id: $authUser->id");
 
         Profile::create([
             "first_name" => $payload["first_name"],

@@ -1,21 +1,8 @@
 @forward "../components/btn";
 @use "../mixins/tailwindcss" as *;
-@use "../mixins/font-face" as fontFace;
 
 // TailwindCSS
 @include TailwindCSS;
-
-// @font-face
-@include fontFace.Quicksand;
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: Quicksand;
-}
 
 .donation-call-image {
     max-height: 28.625rem;

@@ -1,0 +1,77 @@
+@forward "../components/user-avatar";
+@forward "./bo-sidenav";
+
+:root {
+    --bo-topbar-height: 4rem;
+    --bo-topbar-z-index: 100;
+}
+
+.bo-navbar {
+    height: var(--bo-topbar-height);
+    box-shadow: 0px 2px 4px rgba(100, 100, 100, 0.5);
+    z-index: var(--bo-topbar-z-index);
+
+    &__sidenav-toggle {
+        &.activator-open {
+            g#Hamburger {
+                fill: rgba(255, 255, 255, 1);
+            }
+        }
+
+        g#Hamburger {
+            fill: rgba(255, 255, 255, 0.75);
+            transition: 0.3s;
+        }
+
+        &:hover {
+            g#Hamburger {
+                fill: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+
+    .auth-user-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 0.25rem);
+        background: #fff;
+        box-shadow: 1px 1px 2px rgb(100 100 100 / 0.5);
+        border: 1px solid #ddd;
+        width: 16rem;
+        border-radius: 4px;
+
+        &.dropdown-open {
+            display: block;
+        }
+    }
+}
+
+#auth-user-menu-toggle {
+    border-radius: 50%;
+
+    &.toggle-open {
+        box-shadow: 0px 0px 8px rgba(100, 100, 100, 0.9);
+    }
+
+    .app-user-avatar {
+        background-color: var(--bs-secondary);
+        color: currentColor;
+    }
+}
+
+.show-lg {
+    @media only screen and (max-width: 1077px) {
+        display: none !important;
+    }
+}
+.show-md {
+    @media only screen and (max-width: 768px) {
+        display: none !important;
+    }
+}
+.hide-lg {
+    @media only screen and (min-width: 1078px) {
+        display: none !important;
+    }
+}

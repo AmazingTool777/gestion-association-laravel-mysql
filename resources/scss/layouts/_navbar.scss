@@ -5,6 +5,10 @@
     --app-navbar-height: 4rem;
 }
 
+:root {
+    --app-navbar-height: 4rem;
+}
+
 .app-navbar {
     height: var(--app-navbar-height);
     background: #fff;

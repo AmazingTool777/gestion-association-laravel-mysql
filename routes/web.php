@@ -95,3 +95,22 @@ Route::post("/donations", [DonationController::class, "store"])->middleware("aut
 Route::get('/back-office/dashboard', [DashboardController::class, "index"])->name("back-office.dashboard");
 
 /* --------------------------------------------------------------------- */
+
+/*
+|--------------------------------------------------------------------------
+| Back-office: Donation call
+|--------------------------------------------------------------------------
+|
+*/
+
+// Donations calls page
+Route::get('/back-office/donation-calls', [DonationCallController::class, "boIndex"])
+    ->name("back-office.donation-calls")
+    ->middleware("auth");
+
+// Donations call page
+Route::get('/back-office/donation-calls/{donationCall}', [DonationCallController::class, "boShow"])
+    ->name("back-office.donation-calls.show")
+    ->middleware("auth");
+
+/* --------------------------------------------------------------------- */

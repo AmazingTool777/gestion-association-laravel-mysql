@@ -1,0 +1,8 @@
+@forward "../components/col-sort-field";
+@use "../mixins/tailwindcss" as *;
+
+@include TailwindCSS;
+
+.donation-call-actions-toggle::after {
+    display: none !important;
+}

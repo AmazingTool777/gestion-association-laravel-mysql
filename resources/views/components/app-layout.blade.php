@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/scss/lib/bootstrap.scss', 'resources/css/lib/fontawesome.css', 'resources/scss/layouts/navbar.scss'])
+    @vite(['resources/scss/lib/bootstrap.scss', 'resources/css/lib/fontawesome.css', 'resources/scss/layouts/app-layout.scss'])
     {{ $head }}
 </head>
 
