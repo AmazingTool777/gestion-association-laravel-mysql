@@ -32,6 +32,11 @@ class Donation extends Model
         return $this->belongsTo(DonationCall::class, "donation_call_id");
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     /**
      * ----------------------------------------------------
      */

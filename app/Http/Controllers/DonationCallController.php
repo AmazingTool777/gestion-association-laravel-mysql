@@ -110,4 +110,12 @@ class DonationCallController extends Controller
             "results"
         ));
     }
+
+    public function boShow(Request $request, DonationCall $donationCall)
+    {
+        $donationCall->load([
+            "donations" => ["user" => ["profile"]],
+        ]);
+        return view("donation_call.bo.detail", compact("donationCall"));
+    }
 }

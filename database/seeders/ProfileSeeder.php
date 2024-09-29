@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Profile;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 
 class ProfileSeeder extends Seeder
 {
@@ -84,5 +86,19 @@ class ProfileSeeder extends Seeder
                 "user_id" => 4,
             ]
         ]);
+
+        $PROFILES_FACTORY_USERID_START = 4;
+
+        $usersIds = DB::table('users')
+            ->where("id", ">", $PROFILES_FACTORY_USERID_START)
+            ->get()
+            ->pluck("id")
+            ->toArray();
+        $usersCount = count($usersIds);
+
+        Profile::factory()
+            ->count($usersCount)
+            ->sequence(fn(Sequence $sequence) => ['user_id' => $PROFILES_FACTORY_USERID_START + $sequence->index + 1])
+            ->create();
     }
 }

@@ -104,6 +104,13 @@ Route::get('/back-office/dashboard', [DashboardController::class, "index"])->nam
 */
 
 // Donations calls page
-Route::get('/back-office/donation-calls', [DonationCallController::class, "boIndex"])->name("back-office.donation-calls");
+Route::get('/back-office/donation-calls', [DonationCallController::class, "boIndex"])
+    ->name("back-office.donation-calls")
+    ->middleware("auth");
+
+// Donations call page
+Route::get('/back-office/donation-calls/{donationCall}', [DonationCallController::class, "boShow"])
+    ->name("back-office.donation-calls.show")
+    ->middleware("auth");
 
 /* --------------------------------------------------------------------- */
