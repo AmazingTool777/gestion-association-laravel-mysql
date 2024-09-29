@@ -28,7 +28,6 @@
                 ['href' => '/', 'label' => 'Accueil'],
                 ['href' => '/about', 'label' => 'HelloAsso'],
                 ['href' => '/events', 'label' => 'Evénements'],
-                ['href' => '/contact', 'label' => 'Nous contacter'],
             ];
         @endphp
         <ul class="app-navbar__main-nav-links-list flex gap-x-4 h-full">

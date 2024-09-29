@@ -99,7 +99,7 @@
                     </template>
                     {{-- Donations list --}}
                     <template x-if="isLoaded">
-                        <table class="table text-sm align-middle">
+                        <table class="table table-hover text-sm align-middle">
                             <thead>
                                 <tr>
                                     <th scope="col">Nom complet</th>

@@ -69,7 +69,6 @@
                             ],
                         ];
                     @endphp
-                    <x-sort-field :params="$sortParams" :default-query="$defaultSort" />
                 </x-slot>
             </x-filters-field>
         </div>
@@ -80,12 +79,38 @@
                 <div class="table-responsive-lg">
                     <table class="table table-hover text-sm mb-0">
                         <thead>
-                            <tr>
-                                <th scope="col">Publié le</th>
+                            <tr class="align-middle">
+                                <th scope="col">
+                                    <div class="flex items-center gap-x-2">
+                                        <span>Publié le</span>
+                                        <x-col-sort-field key="created_at" :orders="[
+                                            ['value' => 'asc', 'label' => 'Les plus anciens d\'abord'],
+                                            ['value' => 'desc', 'label' => 'Les plus récents d\'abord'],
+                                        ]" :is-default="$defaultSort['order']"
+                                            :default-query="$defaultSort" title="date de publication" />
+                                    </div>
+                                </th>
                                 <th scope="col">Photo</th>
                                 <th scope="col">Titre</th>
                                 <th scope="col" class="text-center">Catégorie</th>
-                                <th scope="col" class="text-right">Montants</th>
+                                <th scope="col" class="text-right">
+                                    <div class="flex items-center gap-x-2">
+                                        <span>Montants</span>
+                                        <x-col-sort-field key="required_amount" :orders="[
+                                            [
+                                                'value' => 'asc',
+                                                'label' => 'Ordre croissant',
+                                                'fa-icon' => 'sort-numeric-up',
+                                            ],
+                                            [
+                                                'value' => 'desc',
+                                                'label' => 'Ordre décroissant',
+                                                'fa-icon' => 'sort-numeric-down',
+                                            ],
+                                        ]" :align-end="true"
+                                            :default-query="$defaultSort" title="montant requis" />
+                                    </div>
+                                </th>
                                 <th scope="col" class="text-center">Actions</th>
                             </tr>
                         </thead>
