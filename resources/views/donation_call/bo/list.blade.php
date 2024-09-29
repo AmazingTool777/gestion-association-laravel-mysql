@@ -1,6 +1,6 @@
 <x-bo-layout>
     <x-slot:head>
-        <title>Back-office - Appels aux dons</title>
+        <title>Appels aux dons - Back-office</title>
         @vite('resources/scss/donation-call/list.bo.scss')
     </x-slot>
 
@@ -86,7 +86,7 @@
                                 <th scope="col">Titre</th>
                                 <th scope="col" class="text-center">Catégorie</th>
                                 <th scope="col" class="text-right">Montants</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col" class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -131,7 +131,7 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a href="{{ route('back-office.donation-calls') . '/' . $donationCall->id }}"
+                                                    <a href="{{ route('back-office.donation-calls.show', ['donationCall' => $donationCall]) }}"
                                                         class="dropdown-item text-sm">
                                                         <i class="fa-solid fa-eye mr-2"></i>
                                                         Consulter

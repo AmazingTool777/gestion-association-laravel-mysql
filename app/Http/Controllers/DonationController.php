@@ -35,4 +35,16 @@ class DonationController extends Controller
 
         return redirect()->back()->with("success", "Votre don a bien été envoyé");
     }
+
+    public function apiIndex(Request $request)
+    {
+        $query = Donation::with("user")->orderBy("created_at", "desc");
+
+        if ($request->query("donation_call_id")) {
+            $query->where("donation_call_id", $request->query("donation_call_id"));
+        }
+
+        $pageSize = $request->query("page_size", 5);
+        return $query->paginate($pageSize);
+    }
 }

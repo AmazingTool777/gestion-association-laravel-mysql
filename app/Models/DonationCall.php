@@ -66,6 +66,11 @@ class DonationCall extends Model
         return $this->belongsTo(DonationCallType::class, "type_id");
     }
 
+    public function donations()
+    {
+        return $this->hasMany(Donation::class, "donation_call_id");
+    }
+
     /**
      * ----------------------------------------------------
      */
