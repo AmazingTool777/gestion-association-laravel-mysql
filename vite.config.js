@@ -64,6 +64,7 @@ export default defineConfig({
                 "resources/js/donation-call/detail.js",
                 "resources/js/donation-call/list.bo.js",
                 "resources/js/donation-call/detail.bo.js",
+                "resources/js/dashboard.bo.js",
             ],
             refresh: true,
         }),

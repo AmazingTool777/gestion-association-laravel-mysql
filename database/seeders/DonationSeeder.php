@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Generator as Faker;
 
 class DonationSeeder extends Seeder
 {
@@ -50,7 +51,7 @@ class DonationSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         $donationCalls = DonationCall::all();
         $donationCallsCount = $donationCalls->count();
@@ -73,6 +74,7 @@ class DonationSeeder extends Seeder
                 $donationAmount = $donationsAmounts[$j];
 
                 $donation = Donation::factory()
+                    ->state(['created_at' => now()])
                     ->make([
                         'amount' => $donationAmount,
                         'giver_info' => json_encode([
@@ -81,9 +83,10 @@ class DonationSeeder extends Seeder
                             "phone" => $this->generateMalagasyPhoneNumber($phonePrefix),
                         ]),
                         'user_id' => $user->id,
-                        'donation_call_id' => $donationCall->id,
+                        'donation_call_id' => $donationCall->id
                     ])
                     ->toArray();
+                $donation["created_at"] = $faker->dateTimeBetween('-7 days', 'now')->format('Y-m-d H:i:s');
 
                 $donations[] = $donation;
             }
