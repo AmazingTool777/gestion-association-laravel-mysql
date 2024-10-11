@@ -19,11 +19,11 @@ class DonationController extends Controller
 
         $donation = Donation::create([
             "amount" => $dto["amount"],
-            "giver_info" => json_encode([
+            "giver_info" => [
                 "full_name" => $dto['donation_giver_fullname'],
                 "email" => $dto['donation_giver_email'],
-                "phone" => $dto['donation_giver_phone'],
-            ]),
+                "phone" => "0" . $dto['donation_giver_phone'],
+            ],
             "user_id" => $authUser->id,
             "donation_call_id" => $dto["donation_call_id"],
         ]);

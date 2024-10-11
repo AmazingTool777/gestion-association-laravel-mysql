@@ -70,10 +70,10 @@ php artisan migrate
 php artisan db:seed
 ```
 
-5. Enable the **Intl** extension in the `php.ini` file by uncommenting the `extension=php_intl.dll` line (remove the `;` at the start of the line):
+5. Enable the **Intl** extension in the `php.ini` file by uncommenting the `extension=intl` line (remove the `;` at the start of the line):
 
 ```txt
-;extension=php_intl.dll
+;extension=intl
 ```
 
 The [Intl](https://www.php.net/manual/fr/book.intl.php) is an modern API that allows us to write Date-Time in various locales.
